@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "main": "dist/index.js",
   "author": "Wertarbyte GmbH",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "build": "tsc -p tsconfig.build.json && tsc -p tsconfig.build.json --declaration --emitDeclarationOnly --removeComments false",
     "prepare": "tsc -p tsconfig.build.json && tsc -p tsconfig.build.json --declaration --emitDeclarationOnly --removeComments false",
@@ -18,5 +18,8 @@
     "prettier": "^3.3.3",
     "typescript": "^5.5.3",
     "typescript-eslint": "^7.16.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
