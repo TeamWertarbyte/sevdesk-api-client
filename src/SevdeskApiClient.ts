@@ -17,6 +17,20 @@ export default class XentralApiClient {
     this.userAgent = options.userAgent;
   }
 
+  //#region Basics
+  /**
+   * Get the bookkeeping system version. Sevdesk 2.0 introduces some breaking API changes so you'll
+   * have to use this and change the API payloads accordingly, depending on the version of the target instance.
+   * @see https://tech.sevdesk.com/api_news/posts/2024_04_04-system-update-breaking-changes/
+   * @returns The bookkeeping system version
+   */
+  getBookkeepingSystemVersion(): Promise<{ version: '1.0' | '2.0' }> {
+    return this.apiRequest('/Tools/bookkeepingSystemVersion')
+      .then((res) => res.json())
+      .then(({ objects }) => objects);
+  }
+  //#endregion
+
   /**
    *
    * @param route Route with leading slash (eg. /version)
