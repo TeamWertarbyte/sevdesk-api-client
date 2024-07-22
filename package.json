@@ -1,0 +1,22 @@
+{
+  "name": "@wertarbyte/sevdesk-api-client",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "author": "Wertarbyte GmbH",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && tsc -p tsconfig.build.json --declaration --emitDeclarationOnly --removeComments false",
+    "prepare": "tsc -p tsconfig.build.json && tsc -p tsconfig.build.json --declaration --emitDeclarationOnly --removeComments false",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.7.0",
+    "@types/eslint__js": "^8.42.3",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^7.16.1"
+  }
+}
