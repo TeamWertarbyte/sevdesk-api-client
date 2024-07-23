@@ -303,6 +303,7 @@ export interface CreateVoucherPayload {
     supplier?: ObjectReference<'Contact'> | null;
     supplierName?: string | null;
     description?: string | null;
+    resultDisdar?: string | null;
     /** Voucher date (timestamp in seconds or dd.mm.yyyy) */
     payDate?: string | null;
     status: VoucherStatus;
@@ -313,6 +314,13 @@ export interface CreateVoucherPayload {
     creditDebit: VoucherCreditDebit;
     voucherType: VoucherType;
     currency?: string | null;
+    sumNet: number | null;
+    sumGross: number | null;
+    sumTax?: number | null;
+    sumNetAccounting?: number | null;
+    sumTaxAccounting?: number | null;
+    sumGrossAccounting?: number | null;
+    showNet?: boolean;
     propertyForeignCurrencyDeadline?: string | null;
     propertyExchangeRate?: number | null;
     /** Tax set (sevdesk 1.0 only, replaced by {@link taxRule}) */
@@ -325,6 +333,24 @@ export interface CreateVoucherPayload {
     deliveryDateUntil?: string | number | null;
     document?: ObjectReference<'Document'> | null;
     costCentre?: ObjectReference<'CostCentre'> | null;
+    /** @deprecated use {@link recurringInterval} instead (typo in the sevdesk API) */
+    recurringIntervall?: RecurringInterval | null;
+    recurringInterval?: RecurringInterval | null;
+    recurringStartDate?: string | null;
+    recurringNextVoucher?: string | null;
+    recurringLastVoucher?: string | null;
+    recurringEndDate?: string | null;
+    accountingSpecialCase?: unknown;
+    vatNumber?: string | null;
+    tip?: string;
+    mileageRate?: string;
+    sumDiscountNet?: string | null;
+    sumDiscountGross?: string | null;
+    sumNetForeignCurrency?: string | null;
+    sumTaxForeignCurrency?: string | null;
+    sumGrossForeignCurrency?: string | null;
+    sumDiscountNetForeignCurrency?: string | null;
+    sumDiscountGrossForeignCurrency?: string | null;
   };
   voucherPosSave: Array<{
     objectName: 'VoucherPos';
